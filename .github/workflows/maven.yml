@@ -1,13 +1,14 @@
 name: Docker Image CI for GHCR
 on:
   push
-permissions:
-  contents: 'read'
-  id-token: 'write'
-  issues: 'write'
+
 jobs:
   build_and_publish:
     runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      contents: read
+      packages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v1
