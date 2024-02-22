@@ -31,7 +31,6 @@ jobs:
           name: Maven Tests
           path: target/surefire-reports/*.xml
           reporter: java-junit
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           fail-on-error: true
 
       - name: Build and push the image
