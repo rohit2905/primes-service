@@ -2,6 +2,9 @@ package com.iu.rokala.primesservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import static org.junit.jupiter.api.Assertions.*;
+
+import com.iu.rokala.primesservice.service.PrimesService;
 
 @SpringBootTest
 class PrimesServiceApplicationTests {
