@@ -31,7 +31,13 @@ public class AuthenticationService implements IAuthenticationService, UserDetail
 
 	@Override
 	public boolean login(String username, String password) throws IOException {
-		// TODO Auto-generated method stub
+		Customer customer = authenticationRepository.findByUsername(username);
+		if (customer != null) {
+			BCryptPasswordEncoder bc = new BCryptPasswordEncoder();
+			if (bc.matches(password, customer.getPassword())) {
+				return true;
+			}
+		}
 		return false;
 	}
 
