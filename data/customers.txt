@@ -1,1 +1,2 @@
 test, $2a$10$JLTClWOBeMrJUdnhNr4yGeN72RO8yK1DuiSvy/NZsUUL9HSzK9QHW
+rohit, $2a$10$MMP8d1hqqRgIDcNTcWRzU.VJbn7uB1.ggs2zIKNybz1.3DeG7MK7q

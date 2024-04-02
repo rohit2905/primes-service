@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import com.iu.rokala.primesservice.service.IAuthenticationService;
 import com.iu.rokala.primesservice.service.TokenService;
 
 @RestController
+@CrossOrigin("http://127.0.0.1:5500")
 public class AuthenticationController {
 
 	private IAuthenticationService authenticationService;
@@ -30,7 +32,7 @@ public class AuthenticationController {
 	}
 
 	@PostMapping("/register")
-	public boolean register(@RequestBody Customer customer) {
+	public Customer register(@RequestBody Customer customer) {
 		try {
 			return authenticationService.register(customer);
 		} catch (IOException e) {
