@@ -48,7 +48,7 @@ services:
     environment:
       - PORT=3000
       - STORAGE_ACCOUNT_NAME=practicum9nrp
-      - STORAGE_ACCESS_KEY=N5BzUOfJC+mZSL/U3iKWVAR2j7Psuh3ERiN14eai8azQhotPe7WDmeHNIKNNW+HtCWSHElwaMqNd+AStCooLGw==
+      - STORAGE_ACCESS_KEY=
     restart: "no"
   
   quotation-service:
