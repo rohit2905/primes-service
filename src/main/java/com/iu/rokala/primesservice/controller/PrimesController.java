@@ -1,6 +1,8 @@
 package com.iu.rokala.primesservice.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,7 +30,9 @@ public class PrimesController {
 	@GetMapping("/{n}")
 	public boolean isPrime(@PathVariable long n) {
 		boolean result =  primesService.isPrime(n);
-		mqSender.sendMessage(n, result);
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String username =  ((Jwt) principal ).getSubject();
+		mqSender.sendMessage(username, n, result);
 		return result;
 	}
 	

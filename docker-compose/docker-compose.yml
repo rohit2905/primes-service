@@ -74,3 +74,12 @@ services:
       - "4006:5672"
       - "4007:15672"
     restart: always
+
+  history-database:
+    image: postgres:alpine
+    container_name: history-database
+    ports:
+      - "4008:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: history
